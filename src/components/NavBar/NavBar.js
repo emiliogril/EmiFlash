@@ -1,11 +1,17 @@
 import "./NavBar.css";
+import ".//CartWidget/CartWidget.js";
+import CartWidget from ".//CartWidget/CartWidget.js";
+
+
+
+
 
 const NavBar = () => {
     return (
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
         <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <div class="logo">EMI FLASH</div></a>
+        <img src="../images/logo.png" alt="" width="200" /></a>
             <button
             class="navbar-toggler" 
             type="button" 
@@ -30,8 +36,10 @@ const NavBar = () => {
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contacto</a></li>
+                <li></li>
                 </ul>
             </div>
+            <CartWidget />
         </div>
     </nav>
     );

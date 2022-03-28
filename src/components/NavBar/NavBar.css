@@ -3,16 +3,7 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth; }
-  
-.logo{
-    font-family: 'Bebas Neue';
-    font-size: 40px;
-}
 
-.nav {
-    width: 100%;
-}
-  
   .nav-bar {
     font-family: 'Bebas Neue';
     font-size: 20px;

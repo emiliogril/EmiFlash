@@ -1,0 +1,24 @@
+.counter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.counter p {
+    margin: auto 0;
+}
+
+.btnCounter {
+    width: 1.5rem;
+    border-radius: 20%;
+    background-color: white;
+    color: #6c757d;
+    border: 1px solid #6c757d;
+}
+
+.btnCounter:hover {
+    background-color: #6c757d;
+    border: 1px solid #6c757d;
+    color: white;
+}

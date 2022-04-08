@@ -12,13 +12,13 @@
 .btnCounter {
     width: 1.5rem;
     border-radius: 20%;
-    background-color: white;
-    color: #6c757d;
+    background-color: rgb(167, 4, 4);
+    color: #ffffff;
     border: 1px solid #6c757d;
 }
 
 .btnCounter:hover {
-    background-color: #6c757d;
+    background-color: rgb(75, 0, 0);
     border: 1px solid #6c757d;
     color: white;
 }

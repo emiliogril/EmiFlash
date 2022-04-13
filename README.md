@@ -7,7 +7,7 @@ ReactBoostrap para el Navbar
 
 # Emi Flash - Tienda Ropa Indumentaria al Ciclismo
 
-<img src="/images/videogif.gif">
+<img src="https://github.com/emiliogril/EmiFlash/blob/master/public/images/videogif.gif">
 
 En este proyecto se accede al e-commerce, es un proyecto inicializado con el fin de recorrer y aprender sobre la Libreria ReactJS del curso de React JS.
 

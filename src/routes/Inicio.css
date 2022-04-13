@@ -1,0 +1,25 @@
+/* PARTE DE NAVEGACION */
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.banner {
+    grid-area: video;
+    height: 59vh;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.carousel {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: -10;
+}

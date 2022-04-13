@@ -1,17 +1,14 @@
 /* PARTE DE NAVEGACION */
-* {
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth; }
 
-  .nav-bar {
+  .navbar {
     font-family: 'Bebas Neue';
     font-size: 20px;
-    margin: 0px, 100px;
+    margin: 0px, 200px;
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end; }
+    justify-content: flex-end;
+    align-items: center; }
   
   .nav-link {
     font-weight: 300;

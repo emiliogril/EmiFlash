@@ -1,13 +1,18 @@
 import "../Item/Item.css";
+import { Link } from "react-router-dom";
 
-const Item = ({ name, img }) => {
+
+
+const Item = ({ id, name, img }) => {
     return (
+     
+        
         <div className="card">
-            <img src={img} className="card-img-top" alt="{name}" />
+            <img className="card-img-top" src={img} alt="{name}" />
             <div className="card-body">
                 <h5 className="card-title">{name}</h5>
                 <p className="card-text">
-                    <button className="btn btn-primary">Ver description</button>
+                <Link to={`/detail/${id}`} className="btn btn-outline-secondary">Ver descripción</Link >
                 </p>
             </div>
         </div>
@@ -15,3 +20,4 @@ const Item = ({ name, img }) => {
 };
 
 export default Item;
+

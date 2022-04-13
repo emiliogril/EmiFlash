@@ -2,23 +2,32 @@ import { useState, useEffect } from 'react';
 import { getProducts } from '../../asyncmock';
 import ItemList from '../ItemList/ItemList';
 import"./ItemListContainer.css";
+import { useParams } from "react-router-dom";
 
 
 const ItemListContainer = (props) => {
-    const [products, setProducts] = useState([]);
+    const [products, setProductsId] = useState([]);
 
-    useEffect(() => {
-        getProducts().then((prods) => {
-            setProducts(prods);
-        }).catch((error) => {
-            console.log(error);
-        });
-    }, []);
+    const { setProducts: categoryId } = useParams();
+
+    useEffect (()=>{
+      getProducts(categoryId).then(product =>{
+        setProductsId(product)
+      })
+  },[categoryId])
 
     return (
         <>
         <h1 className="titulo">{props.titulo}</h1>
+        {products.length > 0 ?
             <ItemList products={products} />
+            :
+            <div className="text-center m-5">
+          <div className="spinner-border" role="status">
+            <span className="visually-hidden">Cargando...</span>
+          </div>
+        </div>
+      }
     </>
   );
 };

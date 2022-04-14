@@ -43,13 +43,15 @@ const NavBar = () => {
                     <li className="nav-item">
                         <NavLink to="/productos" className="nav-link">Productos</NavLink>
                     </li>
+
+
         {/* El método map cargo cada una de las categorías trayendolas desde el Async Mock */}
-                    <li><div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div className="categories navbar-nav ms-auto">
-                    { categories.map(cat => 
-                    <div key={cat.id}><NavLink className="nav-link" to={`/category/${cat.id}`}>{cat.description}</NavLink></div>
-                     )} </div></div>
-                    </li>
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div className="categories navbar-nav ms-auto">
+            { categories.map(cat => <NavLink className="nav-link" key={cat.id} to={`/category/${cat.id}`}>{cat.description}</NavLink>)}
+          </div>
+        </div>
+                    
                     <li className="nav-item">
                         <NavLink to="/contacto" className="nav-link">Contacto</NavLink></li>
                 <li></li>

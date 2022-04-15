@@ -1,21 +1,22 @@
-import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import ItemCount from "../ItemCount/ItemCount";
+import CartContext from "../Context/CartContext";
 
 
- const ItemDetail = ({ img, name, category, description, price, stock }) => {
 
-  const [quantity, setQuantity] = useState(0);
+const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
 
-  const handleOnAdd = (count) => {
-    setQuantity(count);
-    console.log(count)
-  };
-    // const handleOnAdd = (quantity) => {
-    //     console.log(`Se compro ${quantity} productos`);
-    //   };
+  const { addItem, isInCart } = useContext(CartContext)
 
+  const handleAdd = (count) => {
+      const productObj = {
+          id, name,price, quantity: count
+      }
+
+      addItem(productObj)
+  }
 
     return (
         <>
@@ -26,8 +27,8 @@ import { Link } from "react-router-dom";
             <h5 className="card-title">Descipción: {description}</h5>
             <h6 className="card-title">Categoria: {category}</h6>
             <p className="card-text">Precio $ {price}</p>
-            <p className="card-text">Stock: {stock}</p>
-            {quantity > 0 ? <Link to="/cart" className="goCart">Ir al carrito</Link> : <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />}
+            {/* <p className="card-text">Stock: {stock}</p> */}
+            { isInCart(id) ? <Link to="/cart" className="goCart">Ir al carrito</Link> : <ItemCount onAdd={handleAdd} stock={stock}  />}
             {/* <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} /> */}
           </div>
         </div>
@@ -38,51 +39,3 @@ import { Link } from "react-router-dom";
 export default ItemDetail;
 
 
-
-// const ItemListContainer = ({ img, name, description, price, stock }) => {
-
-//   const handleOnAdd = (quantity) => {
-//       console.log(`Se compro ${quantity} productos`);
-//     };
-//   return (
-//       <>
-//       <div className="container">
-//       <div className="card">
-//         <div className="card-body">
-//         <img className="picture" src={img} alt="jersey" />
-//           <h5 className="card-title">{name}</h5>
-//           <h6 className="card-title">{description}</h6>
-//           <p className="card-text">Precio:${price}</p>
-//           <ItemCount initial={1} stock={{stock}} onAdd={handleOnAdd} />
-//         </div>
-//       </div>
-//     </div>
-//   </>
-// );
-// };
-
-
-
-
-// const handleOnAdd = (quantity) => {
-//   console.log(`Se compro ${quantity} productos`);
-// };
-
-// return (
-//   <>
-//     <div className="contenedor">
-//       <img className="picture" src={img} alt="jersey" />
-//       <div className="padre-detalles">
-//         <div className="detalles">
-//           <h5>{name}</h5>
-//           <p>{description}<p/>
-//             <span className="precio">Precio: <b>$ {price}</b>
-//             </span>
-//             <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-//   </>
-// );
-// };

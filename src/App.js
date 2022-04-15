@@ -9,13 +9,16 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import Contacto from "../src/routes/Contacto";
 import Footer from './components/Footer/Footer';
+import { CartContextProvider } from './components/Context/CartContext';
 
 
 
 const App = () => {
   return (
-    <>
+    <div className="App">
+    
   <BrowserRouter>
+  <CartContextProvider>
     <NavBar />
       <Routes>
             <Route index element={<Inicio />} />
@@ -28,8 +31,10 @@ const App = () => {
             <Route path="*" element={<h1>NOT FOUND 404</h1>} />
       </Routes>
       <Footer />
+      </CartContextProvider>
   </BrowserRouter>
-    </>
+  
+    </div>
 
   );
 };

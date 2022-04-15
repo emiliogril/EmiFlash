@@ -12,7 +12,8 @@ const Item = ({ id, name, img }) => {
             <div className="card-body">
                 <h5 className="card-title">{name}</h5>
                 <p className="card-text">
-                <Link to={`/detail/${id}`} className="btn btn-outline-secondary">Ver descripción</Link >
+                {/* <Link to={`/detail/${id}`} className="goCart">Ver descripción</Link > */}
+                <Link to={`/detail/${id}`} className="goCart">Ver descripción</Link >
                 </p>
             </div>
         </div>

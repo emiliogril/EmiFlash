@@ -1,0 +1,27 @@
+/* PARTE DE FOOTER */
+
+.copy {
+
+    color: white;
+    font-weight: lighter;
+    text-align: center;
+    margin-top: 20px; }
+
+footer {
+      background-color: #333333;
+      padding: 40px;
+      margin-top: 20px;
+      text-align: center;
+      color: #fff;
+      height: 100%;
+
+    }
+h5 {
+        margin: 20px 0;
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+
+.tamanio {
+        font-size: 30px;
+    }

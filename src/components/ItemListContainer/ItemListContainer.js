@@ -9,12 +9,10 @@ const ItemListContainer = (props) => {
     const [products, setProducts] = useState([]);
 
     const { categoryId } = useParams();
-    
 
     useEffect (()=>{
       getProducts(categoryId).then(product =>{
         setProducts(product)
-        
       })
   },[categoryId])
 

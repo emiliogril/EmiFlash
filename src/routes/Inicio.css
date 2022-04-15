@@ -5,17 +5,8 @@
     scroll-behavior: smooth;
 }
 
-.banner {
-    grid-area: video;
-    height: 59vh;
-    overflow: hidden;
-    position: relative;
-
-}
-
 .carousel {
     position: absolute;
-    top: 60px;
     left: 0;
     width: 100%;
     height: 100%;

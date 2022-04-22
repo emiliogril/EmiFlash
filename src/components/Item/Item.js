@@ -1,5 +1,6 @@
 import "../Item/Item.css";
 import { Link } from "react-router-dom";
+import * as bootstrap from 'bootstrap';
 
 
 
@@ -18,7 +19,6 @@ import { Link } from "react-router-dom";
                 <h5 className="card-title">{name}</h5>
                 <h6 className="card-title">Precio $ {price}</h6>
                 <p className="card-text">
-                {/* <Link to={`/detail/${id}`} className="goCart">Ver descripción</Link > */}
                 <Link to={`/detail/${id}`} className="goCart">Ver descripción</Link >
                 </p>
             </div>

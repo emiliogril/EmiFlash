@@ -1,1 +1,19 @@
+.loading {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 
+    color: #7e0101;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.noExiste {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 60px;
+    color: #7e0101;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}

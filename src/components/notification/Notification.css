@@ -1,0 +1,12 @@
+.Success {
+    background-color: green;
+}
+
+.Error {
+    background-color: red;
+}
+
+.Message {
+    color: rgb(136, 15, 15);
+    border-radius: 10px;
+}

@@ -3,6 +3,7 @@ import { getProductsById } from '../../asyncmock';
 import "./ItemDetailContainer.css";
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom";
+import * as bootstrap from 'bootstrap';
 
 
 const ItemDetailContainer = ({ setCart, cart }) => {
@@ -25,18 +26,22 @@ useEffect(() => {
   return (() => {
     setProductsId()
   })
-},[])
+},[productId])
+
+if(loading) {
+  return (
+    <h1 className="loading">Cargando...</h1>
+  )
+}
 
 
   return (
     <div className="ItemDetailContainer">
       {
-        loading ?
-            <h1>Cargando...</h1> :
         product ?
 
           <ItemDetail {...product} setCart={setCart} cart={cart} /> :
-          <h1>El producto no existe</h1>
+          <h1 className="noExiste">El producto no existe</h1>
       }
       </div>
   );

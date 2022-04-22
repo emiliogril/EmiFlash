@@ -1,11 +1,14 @@
 .btnCarrito {
     display: flex;
-    border: 0;
+    border: 0px;
     align-items: center;
     justify-content: center;
     margin-left: 5px;
     padding: 0px 10px 0px 10px;
     background-color: hsl(0, 0%, 97%);
+    border-radius: 10px;
+    text-decoration: none;
+    color: #7e0101;
 }
 
 .btnCarrito a {

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import {CgShoppingCart} from "react-icons/cg";
 import "./CartWidget.css";
 import CartContext from "../Context/CartContext";
+import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
 
@@ -9,7 +10,8 @@ const CartWidget = () => {
 
     return (
         <button className="btnCarrito">
-            <CgShoppingCart /> {getQuantity()}
+            {/* <CgShoppingCart /> {getQuantity()} */}
+            <Link className='fas fa-shopping-cart carrito-boton' to='/cart'> <i className='carrito-contador'> <CgShoppingCart /> {getQuantity()} </i></Link>
         </button>
     )
 }

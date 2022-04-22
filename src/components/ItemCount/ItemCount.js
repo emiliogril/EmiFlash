@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./ItemCount.css";
+import * as bootstrap from 'bootstrap';
 
 
 const ItemCount = ({ initial, stock, onAdd }) => {

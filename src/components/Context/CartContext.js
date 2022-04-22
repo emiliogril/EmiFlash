@@ -6,9 +6,18 @@ export const CartContextProvider = ({ children }) => {
     const [cart, setCart] = useState([])
     console.log(cart)
 
-    const addItem = (productToAdd) => {
-        setCart([...cart, productToAdd])
+    const addItem = (productsToAdd) => {
+
+    const repeatItem = cart.find(item => item.id === productsToAdd.id)
+        if (!repeatItem) {
+        setCart([...cart, productsToAdd])
+        } else {
+
+        const newCart = cart.filter(item => item.id !== repeatItem.id);
+        repeatItem.quantity += productsToAdd.quantity;
+        setCart([...newCart, repeatItem]);
     }
+}
 
     const getQuantity = () => {
         let count = 0
@@ -31,6 +40,9 @@ export const CartContextProvider = ({ children }) => {
         const products = cart.filter(prod => prod.id !== id)
         setCart(products)
     }
+    // Si el producto se encuentra en el carrito
+
+
 
     return(
         <CartContext.Provider value={{

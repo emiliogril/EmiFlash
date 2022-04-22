@@ -1,0 +1,19 @@
+.cartContainer{
+    margin-top: 100px;
+    text-align: center;
+}
+
+.textoCarrito{
+    margin-top: 100px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.row{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(124, 124, 124);
+    margin: 10px;
+    color: aliceblue;
+}

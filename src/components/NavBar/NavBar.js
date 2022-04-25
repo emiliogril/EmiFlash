@@ -5,13 +5,20 @@ import { NavLink } from "react-router-dom";
 import * as bootstrap from 'bootstrap';
 import { useState, useEffect } from "react";
 import { getCategories } from "../../../src/asyncmock";
+import { firestoreDb } from '../../services/firebase'
+import { getDocs, collection, orderBy } from 'firebase/firestore'
 
 
 const NavBar = () => {
     const [categories, setCategories] = useState([])
   
     useEffect(() => {
-      getCategories().then(categories => {
+    //   getCategories().then(categories => {
+
+    getDocs(collection(firestoreDb, 'categories'), orderBy("order", "asc")).then(response => {
+        const categories = response.docs.map(doc => {
+          return { id: doc.id, ...doc.data()}
+        })
         setCategories(categories)
       })
     }, [])
@@ -44,20 +51,13 @@ const NavBar = () => {
                         <NavLink to="/productos" className="nav-link">Productos</NavLink>
                     </li>
 
-
-        {/* El método map cargo cada una de las categorías trayendolas desde el Async Mock */}
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div className="categories navbar-nav ms-auto">
+          <li><div className="categories navbar-nav ms-auto">
             { categories.map(cat => <NavLink className="nav-link" key={cat.id} to={`/category/${cat.id}`}>{cat.description}</NavLink>)}
-          </div>
+          </div></li>
         </div>
-                    
-                    <li className="nav-item">
-                        <NavLink to="/contacto" className="nav-link">Contacto</NavLink></li>
-                <li></li>
-                </ul>
+        </ul>
             </div>
-         
             <CartWidget />
         </div>
     </nav>

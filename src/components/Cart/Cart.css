@@ -10,10 +10,35 @@
 }
 
 .row{
-    border: 1px solid black;
     border-radius: 5px;
     padding: 10px;
-    background-color: rgb(124, 124, 124);
+    background-color: rgb(0, 0, 0);
     margin: 10px;
     color: aliceblue;
+}
+
+.listaProductos {
+    margin: 10px;
+    background-color: rgba(124, 124, 124, 0.651);
+}
+
+.cajaVacio {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.btn {
+    width: 250px;
+    background-color: #221f1f;
+    text-align: center;
+    align-items: center;
+    color: white;
+    padding: 10px;
+}
+
+.cart{
+    margin-top: 100px;
+    text-align: center;
 }

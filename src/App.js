@@ -28,8 +28,8 @@ const App = () => {
               <Route path='/category/:categoryId' element={<ItemListContainer />} />
               <Route path="/detail/:productId" element={<ItemDetailContainer /> } />
               <Route path="contacto" element={<Contacto />} />
-              <Route path="*" element={<h1>NOT FOUND 404</h1>} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="*" element={<h1>NOT FOUND 404</h1>} />
             </Routes>
 
             <Footer />

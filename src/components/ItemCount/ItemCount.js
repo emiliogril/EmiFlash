@@ -15,6 +15,10 @@ const ItemCount = ({ initial, stock, onAdd }) => {
       setCount(count + 1)
     }
 
+    if(stock === 0) {
+      return <button className='Option' disabled>No hay stock</button>
+  }
+
 
   return (
     <div className="contenedorCounter">

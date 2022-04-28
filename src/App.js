@@ -12,6 +12,7 @@ import Footer from './components/Footer/Footer';
 import { CartContextProvider } from './components/Context/CartContext';
 import Cart from './components/Cart/Cart';
 import { NotificationProvider } from './components/notification/Notification';
+import FinishOrder from './components/FinishOrder/FinishOrder';
 
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
               <Route path="/detail/:productId" element={<ItemDetailContainer /> } />
               <Route path="contacto" element={<Contacto />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/order" element={<FinishOrder/>}/>
               <Route path="*" element={<h1>NOT FOUND 404</h1>} />
             </Routes>
 

@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import CartContext from "../Context/CartContext";
 import { useNotification } from "../notification/Notification";
-import * as bootstrap from 'bootstrap';
+
 
 
 
 const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
 
-  const { addItem, isInCart } = useContext(CartContext)
+  const { addItem, isInCart, getQuantityProd } = useContext(CartContext)
 
   const { setNotification } = useNotification()
 
@@ -32,9 +32,12 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
             <h5 className="card-title">Descipción: {description}</h5>
             <h6 className="card-title">Categoria: {category}</h6>
             <p className="card-text">Precio $ {price}</p>
+            {
+              false
             
-            { isInCart(id) ? <Link to="/cart" className="goCart">Ir al carrito</Link> : <ItemCount onAdd={handleAdd} stock={stock}  />}
-            
+            ? <Link to="/cart" className="goCart">Ir al carrito</Link>
+            : <ItemCount onAdd={handleAdd} stock={stock} initial={getQuantityProd(id)} />}
+          
           </div>
         </div>
     </>

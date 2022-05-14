@@ -27,8 +27,8 @@ const ItemDetail = ({ id, name, img, description, price, stock }) => {
       <div className="containerDetalle">
         <div className="cardAncho">
           <img className="picture" src={img} alt={name} />
-          <h1 className="card-title">{name}</h1>
-          <h5 className="card-title">Descipción: {description}</h5>
+          <h1 className="titular">{name}</h1>
+          <h5 className="card-title">Descripción: {description}</h5>
           <p className="card-text">Precio $ {price}</p>
           {false ? (
             <Link to="/cart" className="goCart">

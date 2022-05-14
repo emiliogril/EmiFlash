@@ -12,7 +12,7 @@ const Item = ({ id, name, img, price }) => {
       <img className="card-img-top" src={img} alt="{name}" />
       <div className="card-body">
         <div className="CardItem" onClick={handleClick}>
-          <h5 className="card-title">{name}</h5>
+          <h5 className="titular">{name}</h5>
           <h6 className="card-title">Precio $ {price}</h6>
           <p className="card-text">
             <Link to={`/detail/${id}`} className="goCart">

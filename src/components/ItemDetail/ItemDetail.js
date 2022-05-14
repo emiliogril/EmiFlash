@@ -5,7 +5,7 @@ import ItemCount from "../ItemCount/ItemCount";
 import CartContext from "../Context/CartContext";
 import { useNotification } from "../notification/Notification";
 
-const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
+const ItemDetail = ({ id, name, img, description, price, stock }) => {
   const { addItem, getQuantityProd } = useContext(CartContext);
 
   const { setNotification } = useNotification();
@@ -24,12 +24,11 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
 
   return (
     <>
-      <div className="container">
+      <div className="containerDetalle">
         <div className="cardAncho">
           <img className="picture" src={img} alt={name} />
           <h1 className="card-title">{name}</h1>
           <h5 className="card-title">Descipción: {description}</h5>
-          <h6 className="card-title">Categoria: {category}</h6>
           <p className="card-text">Precio $ {price}</p>
           {false ? (
             <Link to="/cart" className="goCart">

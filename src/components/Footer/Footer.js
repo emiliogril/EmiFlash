@@ -8,9 +8,9 @@ const Footer = () => {
     <footer>
       <h5>Seguinos en nuestras redes o envianos un mensaje al whatsapp</h5>
       <p className="copy">
-        <FaInstagram className="tamanio" />
-        <FiFacebook className="tamanio" />
-        <FaWhatsapp className="tamanio" />
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><FaInstagram className="tamanio" /></a>
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><FiFacebook className="tamanio" /></a>
+      <a href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer"><FaWhatsapp className="tamanio" /></a>
       </p>
       <p className="copy">© 2022 Emilio Gril. Todos los derechos reservados.</p>
     </footer>

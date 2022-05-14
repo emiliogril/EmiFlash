@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getDocs, collection, query, where, limit, orderBy,} from "firebase/firestore";
+import { getDocs, collection, query, where } from "firebase/firestore";
 import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.css";
 import { useParams } from "react-router-dom";
@@ -13,29 +13,17 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     const collectionRef = categoryId
-      ? query(
-          collection(firestoreDb, "products"),
-          where("category", "==", categoryId),
-          where("price", "==", 800)
-        )
-      : query(
-          collection(firestoreDb, "products"),
-          orderBy("name", "desc"),
-          limit(8)
-        );
+       ? query(collection(firestoreDb, "products"), where("category", "==", categoryId))
+       : collection(firestoreDb, "products")
 
-    getDocs(collectionRef).then((response) => {
-      console.log(response);
-      const products = response.docs.map((doc) => {
-        return { id: doc.id, ...doc.data() };
-      });
-      setProducts(products);
-    });
-  }, [categoryId]);
-
-  if (products.length === 0) {
-    return <h1 className="noHay">No hay productos</h1>;
-  }
+    getDocs(collectionRef).then(response => {
+      console.log(response)
+      const products = response.docs.map(doc => {
+        return { id: doc.id, ...doc.data()}
+      })
+      setProducts(products)
+    })
+}, [categoryId]);
 
   return (
     <>

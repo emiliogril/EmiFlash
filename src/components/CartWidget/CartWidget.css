@@ -3,7 +3,6 @@
     border: 0px;
     align-items: center;
     justify-content: center;
-    margin-left: 5px;
     padding: 0px 10px 0px 10px;
     background-color: hsl(0, 0%, 97%);
     border-radius: 10px;
@@ -12,5 +11,12 @@
 }
 
 .btnCarrito a {
-    margin-left: 5px;
+    margin: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.btnCarrito:hover {
+    background-color: hsl(0, 0%, 80%);
+    color: black;
 }
